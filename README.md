@@ -19,4 +19,4 @@ https://w3id.org/covido#
 <sumitdalal9050@gmail.com>
 
 **Dr. Sarika Jain (National Institute of Technology Kurukshetra, Haryana) **
-<jasarika@gmail.com>,<jasarika@nitkkr.ac.in>
+<jasarika@gmail.com>, <jasarika@nitkkr.ac.in>
