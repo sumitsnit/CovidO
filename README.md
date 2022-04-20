@@ -5,8 +5,8 @@ The CovidO ontology specifies a foundational metadata model set for real-world m
 
 Its structure depicts a conceptual framework that CoronaVirus Disease (Covid-19) applications can extend and use in their implementations, to define core concepts that capture a relevant and interoperable metadata vocabulary.
 
-# Namespace URI:
-https://w3id.org/covido#
+# Ontology URL:
+https://w3id.org/CovidO
 
 ## Contacts:
 **Sumit Sharma**
@@ -25,7 +25,8 @@ The authors would like to thanks
 *PhD Scholar, National Institute of Technology Kurukshetra, Haryana, India*
 <abhishek_61900048@nitkkr.ac.in>
 
+and 
 **Sumit Dalal**
 *PhD Scholar, National Institute of Technology Kurukshetra, Haryana, India*
-<sumitdalal9050@gmail.com>
+<sumitdalal9050@gmail.com>, 
 for motivation and support.
