@@ -1,0 +1,3178 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/CovidO#"
+     xml:base="https://w3id.org/CovidO"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:covido="https://w3id.org/CovidO#"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="https://w3id.org/CovidO">
+        <dc:creator xml:lang="en">Sarika Jain</dc:creator>
+        <dc:creator xml:lang="en">Sumit Sharma</dc:creator>
+        <dc:format xml:lang="en">OWL-DL</dc:format>
+        <dc:subject xml:lang="en">CovidO: An ontology that cover all the aspects of coronavirus disease.</dc:subject>
+        <terms:license rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://creativecommons.org/licenses/by/4.0/</terms:license>
+        <terms:publisher xml:lang="en">National Institute of Technology, Kurukshetra, Haryana, India</terms:publisher>
+        <owl:versionInfo xml:lang="en">2.0.1</owl:versionInfo>
+        <Description xml:lang="en">The Coronavirus Disease Ontology(CovidO) is a ontology to describle the coronavirus disease in all possible aspect. The CovidO is developed to provide standardized human- and computer-interpretable annotation and representation of various coronavirus information.</Description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/format -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/format"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/subject -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/subject"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- https://w3id.org/CovidO#Description -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/CovidO#Description"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/CovidO#admittingIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#admittingIn">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#MedicalRecordStat"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#MedicalFacility"/>
+        <rdfs:label xml:lang="en">admittingIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#belongsTo">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">belongsTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#causedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#causedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#mayCause"/>
+        <rdfs:domain rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#Diagnosis"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">causedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#controlTo -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#controlTo">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Mandate"/>
+        <rdfs:range rdf:resource="http://w3id.org/codo#ExposureToCOVID-19"/>
+        <rdfs:label xml:lang="en">controlTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#diagnosisOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#diagnosisOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#makeDiagnosis"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Diagnosis"/>
+        <rdfs:range rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:label xml:lang="en">diagnosisOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#effectedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#effectedIn">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Policy"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">effectedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasA -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasA">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#MedicalFacility"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Resources"/>
+        <rdfs:label xml:lang="en">hasA</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasAuthor">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Research"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Author"/>
+        <rdfs:label xml:lang="en">hasAuthor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasCovidTest -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasCovidTest">
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#testResultOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#covidTestResult"/>
+        <rdfs:label xml:lang="en">hasCovidTest</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasDiagnosis -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasDiagnosis">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#MedicalRecordStat"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Diagnosis"/>
+        <rdfs:label xml:lang="en">hasDiagnosis</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasDisease -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasDisease">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:label xml:lang="en">hasDisease</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasFamily -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasFamily">
+        <rdfs:domain rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:range rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:label xml:lang="en">hasFamily</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasImpact -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasImpact">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/codo#CoronavirusInfection"/>
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#Policy"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Covid-19Impact"/>
+        <rdfs:label xml:lang="en">hasImpact</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasLocatedIn">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">hasLocatedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasMandate -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasMandate">
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#hasPolicy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Policy"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Mandate"/>
+        <rdfs:label xml:lang="en">hasMandate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasMedicalRecord -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasMedicalRecord">
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#medicalRecordOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#MedicalRecordStat"/>
+        <rdfs:label xml:lang="en">hasMedicalRecord</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasPart -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#isPartOf"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">hasPart</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasPolicy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasPolicy">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Mandate"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Policy"/>
+        <rdfs:label xml:lang="en">hasPolicy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasPrecautions -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasPrecautions">
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#preventionFor"/>
+        <rdfs:domain rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Prevention"/>
+        <rdfs:label xml:lang="en">hasPrecautions</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasPrevention -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasPrevention">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Mandate"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Prevention"/>
+        <rdfs:label xml:lang="en">hasPrevention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasPublished -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasPublished">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#publishedBy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Platform"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Covid-19Study"/>
+        <rdfs:label xml:lang="en">hasPublished</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasRelationship -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasRelationship">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">hasRelationship</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasRestriction -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasRestriction">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Mandate"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Restrictions"/>
+        <rdfs:label xml:lang="en">hasRestriction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasStatistics -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasStatistics">
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#statisticsOf"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Statistics"/>
+        <rdfs:label xml:lang="en">hasStatistics</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasSymptom">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#MedicalRecordStat"/>
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#covidTestResult"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/SYMP_0000462"/>
+        <rdfs:label xml:lang="en">hasSymptom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasTreatment -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasTreatment">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Diagnosis"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000090"/>
+        <rdfs:label xml:lang="en">hasTreatment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasUser -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasUser">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#SocialPost"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#User"/>
+        <rdfs:label xml:lang="en">hasUser</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasVaccineStatistics -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasVaccineStatistics">
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#vaccineStatisticsOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#PersonWiseVaccinationStat"/>
+        <rdfs:label xml:lang="en">hasVaccineStatistics</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasWriter -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#hasWriter">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#News"/>
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#NewsArticles"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Writer"/>
+        <rdfs:label xml:lang="en">hasWriter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#isPartOf">
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://w3id.org/CovidO#hasPart"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">isPartOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#issuedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#issuedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#issuesMandate"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Mandate"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#PublicAuthority"/>
+        <rdfs:label xml:lang="en">issuedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#issuesMandate -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#issuesMandate">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PublicAuthority"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Mandate"/>
+        <rdfs:label xml:lang="en">issuesMandate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#makeDiagnosis -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#makeDiagnosis">
+        <rdfs:domain rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Diagnosis"/>
+        <rdfs:label xml:lang="en">makeDiagnosis</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#mayCause -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#mayCause">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#Diagnosis"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:label xml:lang="en">mayCause</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#medicalRecordOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#medicalRecordOf">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#MedicalRecordStat"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">medicalRecordOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#preventionFor -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#preventionFor">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Prevention"/>
+        <rdfs:range rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:label xml:lang="en">preventionFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#publishedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#publishedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Covid-19Study"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Platform"/>
+        <rdfs:label xml:lang="en">publishedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#statisticsOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#statisticsOf">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Statistics"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">statisticsOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#testResultOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#testResultOf">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#covidTestResult"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">testResultOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#travelFrom -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#travelFrom">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">travelFrom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#travelTo -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#travelTo">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">travelTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#usedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#usedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/CovidO#uses"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Resources"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#MedicalRecordStat"/>
+        <rdfs:label xml:lang="en">usedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#uses -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#uses">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#MedicalRecordStat"/>
+        <rdfs:range rdf:resource="https://w3id.org/CovidO#Resources"/>
+        <rdfs:label xml:lang="en">uses</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#vaccineStatisticsOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/CovidO#vaccineStatisticsOf">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PersonWiseVaccinationStat"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">Vaccination Statistics of a person</rdfs:comment>
+        <rdfs:label xml:lang="en">vaccineStatisticsOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#DateOfBirth -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#DateOfBirth">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">DateOfBirth</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#DateOfDeath -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#DateOfDeath">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">DateOfDeath</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#DrugName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#DrugName">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000090"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">DrugName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#PatientID -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#PatientID">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#MedicalRecordStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Patient unique Identifiaction number</rdfs:comment>
+        <rdfs:label xml:lang="en">PatientID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#PostalCode -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#PostalCode">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/CovidO#address"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">PostalCode</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#ReferenceID -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#ReferenceID">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PersonWiseVaccinationStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">ReferenceID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#ResearchField -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#ResearchField">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Research"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Field</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#ResearchType -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#ResearchType">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Research"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">ResearchType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#StreetNo -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#StreetNo">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/CovidO#address"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">StreetNo</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#address -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#address">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">address</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#admittedOn -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#admittedOn">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#MedicalRecordStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Patient admitted date</rdfs:comment>
+        <rdfs:label xml:lang="en">admittedOn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#closure -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#closure">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Policy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">closure</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#contactNo -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#contactNo">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:label xml:lang="en">contactNo</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#countryCode -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#countryCode">
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Country"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">countryCode</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#dailyIncreasedCases -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#dailyIncreasedCases">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Statistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">number of Covid confirmed cases in a day</rdfs:comment>
+        <rdfs:label xml:lang="en">dailyIncreasedCases</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#dailyVaccinations -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#dailyVaccinations">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PlaceWiseVaccinationStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">dailyVaccinations</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#dateOn -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#dateOn">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Statistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">dateOn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#diagnosDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#diagnosDate">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">diagnosDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#diagnosedBy -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#diagnosedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">diagnosedBy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#diagnosisType -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#diagnosisType">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">diagnosisType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#dischargeDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#dischargeDate">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#MedicalRecordStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">dischargeDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#doi -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#doi">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Research"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">doi</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#dueDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#dueDate">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PersonWiseVaccinationStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">dueDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#effectiveDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#effectiveDate">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#Mandate"/>
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#Policy"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">effectiveDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#endDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#endDate">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#Mandate"/>
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#Policy"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">endDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#gender -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#gender">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Man</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Woman</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">gender</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hasMinistries -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#hasMinistries">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PublicAuthority"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">hasMinistries</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#hospitalName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#hospitalName">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#MedicalRecordStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">hospitalName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#internalMovementRestrictions -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#internalMovementRestrictions">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/CovidO#closure"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#ClosurePolicies"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">internalMovementRestrictions</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#internationalTravel -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#internationalTravel">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/CovidO#closure"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#ClosurePolicies"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">internationalTravel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#isoCode -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#isoCode">
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Continent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">isoCode</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#latitude -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#latitude">
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">latitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#link -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#link">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#Covid-19Study"/>
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#Statistics"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">link</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#longitude -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#longitude">
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">longitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#measures -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#measures">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Prevention"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">measures</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#medicalExamination -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#medicalExamination">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">medicalExamination</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#newDeceased -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#newDeceased">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Statistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">number of Covid person deceased in a day</rdfs:comment>
+        <rdfs:label xml:lang="en">newDeceased</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#noOfPeopleFullyVaccinated -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#noOfPeopleFullyVaccinated">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PlaceWiseVaccinationStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">noOfPeopleFullyVaccinated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#noOfPeopleVaccinated -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#noOfPeopleVaccinated">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PlaceWiseVaccinationStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">noOfPeopleVaccinated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#preventionDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#preventionDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Prevention"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">preventionDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#publicEvents -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#publicEvents">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/CovidO#closure"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#ClosurePolicies"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">publicEvents</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#publicTransport -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#publicTransport">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/CovidO#closure"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#ClosurePolicies"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">publicTransport</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#publishedDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#publishedDate">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Covid-19Study"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">publishedDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#recovered -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#recovered">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Statistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">number of recovered cases</rdfs:comment>
+        <rdfs:label xml:lang="en">recovered</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#resourcesName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#resourcesName">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Resources"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">resourcesName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#resourcesQuantity -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#resourcesQuantity">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Resources"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">resourcesQuantity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#restrictionsOnGatherings -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#restrictionsOnGatherings">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/CovidO#closure"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#ClosurePolicies"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">restrictionsOnGatherings</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#schools -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#schools">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/CovidO#closure"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#ClosurePolicies"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">schools</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#source -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#source">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#Covid-19Study"/>
+                    <rdf:Description rdf:about="https://w3id.org/CovidO#Statistics"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">source</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#stateCode -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#stateCode">
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/State"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">stateCode</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#stayAtHome -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#stayAtHome">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/CovidO#closure"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#ClosurePolicies"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">stayAtHome</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#testOnDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#testOnDate">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#covidTestResult"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">testOnDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#testResult -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#testResult">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#covidTestResult"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Awaiting</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Negative</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>Positive</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">testResult</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#title -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#title">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Covid-19Study"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#totalConfirmedCases -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#totalConfirmedCases">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Statistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">total number of confirmed cases</rdfs:comment>
+        <rdfs:label xml:lang="en">totalConfirmedCases</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#totalDeceased -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#totalDeceased">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#Statistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">total number of covid-19 deceased.</rdfs:comment>
+        <rdfs:label xml:lang="en">totalDeceased</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#totalVaccinations -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#totalVaccinations">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PlaceWiseVaccinationStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">totalVaccinations</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#uniqueId -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#uniqueId">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">unique identity to identify the person</rdfs:comment>
+        <rdfs:label xml:lang="en">uniqueId</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#vaccinationAt -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#vaccinationAt">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PersonWiseVaccinationStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">vaccinationAt</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#vaccineBy -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#vaccineBy">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PersonWiseVaccinationStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">vaccineBy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#vaccineName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#vaccineName">
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#PersonWiseVaccinationStat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">vaccineName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/CovidO#workplace -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/CovidO#workplace">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/CovidO#closure"/>
+        <rdfs:domain rdf:resource="https://w3id.org/CovidO#ClosurePolicies"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">workplace</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/City -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/City">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Settlement"/>
+        <rdfs:label xml:lang="en">City</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/CityDistrict -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/CityDistrict">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Settlement"/>
+        <rdfs:label xml:lang="en">District</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Town -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Town">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Settlement"/>
+        <rdfs:label xml:lang="en">Town</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Village -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Village">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Settlement"/>
+        <rdfs:label xml:lang="en">Village</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/2704003 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/2704003">
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:comment xml:lang="en">Any disease of sudden onset AND/OR short duration</rdfs:comment>
+        <rdfs:label xml:lang="en">Acute disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/64572001 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/64572001">
+        <rdfs:comment xml:lang="en">SCTID: 64572001</rdfs:comment>
+        <rdfs:comment xml:lang="en">an impairment of health or a condition of abnormal functioning.</rdfs:comment>
+        <rdfs:label xml:lang="en">Disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CIDO_0000180 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CIDO_0000180">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000090"/>
+        <rdfs:comment xml:lang="en">A treatment for the COVID-19 disease</rdfs:comment>
+        <rdfs:label xml:lang="en">Covid-19Treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000090 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000090">
+        <rdfs:comment xml:lang="en">A planned process whose completion is hypothesized by a health care provider to eliminate, prevent, or alleviate a disorder, the signs and symptoms of a disorder, or a pathological process</rdfs:comment>
+        <rdfs:label xml:lang="en">Treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000112 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000112">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Covid-19AllopathicTreatment"/>
+        <rdfs:comment xml:lang="en">A treatment whose completion is hypothesized by a health care provider to eliminate a disorder or to alleviate the signs and symptoms of a disorder or pathological process.</rdfs:comment>
+        <rdfs:label xml:lang="en">therapeutic procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SYMP_0000462 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SYMP_0000462">
+        <owl:equivalentClass rdf:resource="http://snomed.info/id/404684003"/>
+        <rdfs:comment xml:lang="en">A symptom is a perceived change in function, sensation, loss, disturbance or appearance reported by a patient indicative of a disease.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Source: https://www.mohfw.gov.in/pdf/FinalGuidanceonMangaementofCovidcasesversion2.pdf 
+
+https://www.who.int/news-room/q-a-detail/q-a-coronaviruses</rdfs:comment>
+        <rdfs:label xml:lang="en">Symptom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://snomed.info/id/404684003 -->
+
+    <owl:Class rdf:about="http://snomed.info/id/404684003">
+        <rdfs:comment xml:lang="en">A representation that is either the output of a clinical history taking or a physical examination or an image finding, or some combination thereof.</rdfs:comment>
+        <rdfs:label xml:lang="en">Clinical finding (finding)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/codo#CoronavirusInfection -->
+
+    <owl:Class rdf:about="http://w3id.org/codo#CoronavirusInfection">
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:comment xml:lang="en">Coronavirus Infection</rdfs:comment>
+        <rdfs:comment xml:lang="en">Coronaviruses are a large family of viruses which may cause illness in animals or humans.  In humans, several coronaviruses are known to cause respiratory infections ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). (source: https://www.who.int/news-room/q-a-detail/q-a-coronaviruses)</rdfs:comment>
+        <rdfs:comment xml:lang="en">SCTID: 186747009</rdfs:comment>
+        <rdfs:label xml:lang="en">CoronavirusInfection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/codo#ExposureToCOVID-19 -->
+
+    <owl:Class rdf:about="http://w3id.org/codo#ExposureToCOVID-19">
+        <rdfs:label xml:lang="en">ExposureToCOVID-19</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/codo#ExposureViaCongregation -->
+
+    <owl:Class rdf:about="http://w3id.org/codo#ExposureViaCongregation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#ExposureViaGathering"/>
+        <rdfs:label xml:lang="en">ExposureViaCongregation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/codo#InfectedCoPassenger -->
+
+    <owl:Class rdf:about="http://w3id.org/codo#InfectedCoPassenger">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#ExposureToCOVID-19"/>
+        <rdfs:label xml:lang="en">InfectedCoPassenger</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/codo#InfectedDomesticHelp -->
+
+    <owl:Class rdf:about="http://w3id.org/codo#InfectedDomesticHelp">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#ExposureToCOVID-19"/>
+        <rdfs:label xml:lang="en">InfectedDomesticHelp</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/codo#InfectedFamilyMember -->
+
+    <owl:Class rdf:about="http://w3id.org/codo#InfectedFamilyMember">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#ExposureToCOVID-19"/>
+        <rdfs:label xml:lang="en">InfectedFamilyMember</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
+        <rdfs:comment xml:lang="en">An agent (eg. person, group, organization, software or physical artifact).</rdfs:comment>
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:comment xml:lang="en">A group of people who work together.</rdfs:comment>
+        <rdfs:label xml:lang="en">Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:comment xml:lang="en">A human being.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Continent -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Continent">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">Continent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Country -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Country">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">Country</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/PopulatedPlace -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/PopulatedPlace">
+        <rdfs:label xml:lang="en">PopulatedPlace</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Settlement -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Settlement">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">Settlement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/State -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/State">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">State</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Ambulance -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Ambulance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Resources"/>
+        <rdfs:label xml:lang="en">Ambulance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Anniversary -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Anniversary">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#ExposureViaGathering"/>
+        <rdfs:label xml:lang="en">Anniversary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Assembly -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Assembly">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#ExposureViaGathering"/>
+        <rdfs:label xml:lang="en">Assembly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Author -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Author">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">person define something</rdfs:comment>
+        <rdfs:label xml:lang="en">Author</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#AyurvedicDrug -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#AyurvedicDrug">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Covid-19AyurvedicTreatment"/>
+        <rdfs:label xml:lang="en">Ayurvedic Remedies</rdfs:label>
+        <rdfs:label xml:lang="en">AyurvedicDrug</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Bed -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Bed">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Resources"/>
+        <rdfs:label xml:lang="en">Bed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Birthday -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Birthday">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#ExposureViaGathering"/>
+        <rdfs:label xml:lang="en">Birthday</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#BusinessVertical -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#BusinessVertical">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:comment xml:lang="en">Group of people works for growth of specific direction</rdfs:comment>
+        <rdfs:label xml:lang="en">BusinessVertical</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#COVID-19DedicatedFacility -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#COVID-19DedicatedFacility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#MedicalFacility"/>
+        <rdfs:comment xml:lang="en">Any facility for providing care to COVID-19 patients.</rdfs:comment>
+        <rdfs:label xml:lang="en">COVID-19DedicatedFacility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#CityWiseStatistics -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#CityWiseStatistics">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#PlaceWiseCasesStatistics"/>
+        <rdfs:label xml:lang="en">CityWiseStatistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#CloseContact -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#CloseContact">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#ExposureToCOVID-19"/>
+        <rdfs:label xml:lang="en">CloseContact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#ClosurePolicies -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#ClosurePolicies">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Policy"/>
+        <rdfs:label xml:lang="en">ClosurePolicies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#ContactWithHealthWorkers -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#ContactWithHealthWorkers">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#ExposureToCOVID-19"/>
+        <rdfs:label xml:lang="en">ContactWithHealthWorkers</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#CoronaVirus -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#CoronaVirus">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#CoronavirusInfection"/>
+        <rdfs:label xml:lang="en">CoronaVirus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#CountryWiseStatistics -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#CountryWiseStatistics">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#PlaceWiseCasesStatistics"/>
+        <rdfs:label xml:lang="en">CountryWiseStatistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Covid-19AllopathicTreatment -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Covid-19AllopathicTreatment">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CIDO_0000180"/>
+        <rdfs:label xml:lang="en">Covid-19AllopathicTreatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Covid-19AllopaticDrug -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Covid-19AllopaticDrug">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Covid-19AllopathicTreatment"/>
+        <rdfs:label xml:lang="en">Covid-19AllopaticDrug</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Covid-19AyurvedicTreatment -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Covid-19AyurvedicTreatment">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CIDO_0000180"/>
+        <rdfs:label xml:lang="en">Covid-19AyurvedicTreatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Covid-19HomeopathicTreatment -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Covid-19HomeopathicTreatment">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CIDO_0000180"/>
+        <rdfs:label xml:lang="en">Covid-19HomeopathicTreatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Covid-19Impact -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Covid-19Impact">
+        <rdfs:label>Covid-19Impact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Covid-19Study -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Covid-19Study">
+        <rdfs:comment xml:lang="en">Study about covid-19</rdfs:comment>
+        <rdfs:label xml:lang="en">Covid-19Study</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Covid19FungalInfection -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Covid19FungalInfection">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#CoronavirusInfection"/>
+        <rdfs:comment xml:lang="en">fungal pathogens for fungal co-infections in severe COVID-19</rdfs:comment>
+        <rdfs:label xml:lang="en">Covid19FungalInfection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Covid19Vaccine -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Covid19Vaccine">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Covid-19AllopathicTreatment"/>
+        <rdfs:comment xml:lang="en">Vaccine used to prevent from Covid 19</rdfs:comment>
+        <rdfs:comment xml:lang="en">booster dose</rdfs:comment>
+        <rdfs:label xml:lang="en">Covid19Vaccine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#CovidCareCenter -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#CovidCareCenter">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#COVID-19DedicatedFacility"/>
+        <rdfs:comment xml:lang="en">Any facility, such as hotels/lodges/hostels/stadiums for providing care to COVID-19 patients are reffered as Covid Care Centre (CCC).</rdfs:comment>
+        <rdfs:label xml:lang="en">CovidCareCenter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#CovidTestingFacility -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#CovidTestingFacility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#MedicalClinic"/>
+        <rdfs:comment xml:lang="en">A Medical clinic where testing for the COVID-19 Coronavirus disease is available.</rdfs:comment>
+        <rdfs:label xml:lang="en">CovidTestingFacility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#DedicatedCovidHealthCentre -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#DedicatedCovidHealthCentre">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#COVID-19DedicatedFacility"/>
+        <rdfs:comment xml:lang="en">The Dedicated COVID Health Centre are hospitals that shall offer care for all cases that have been clinically assigned as moderate.</rdfs:comment>
+        <rdfs:label xml:lang="en">DedicatedCovidHealthCentre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#DedicatedCovidHospital -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#DedicatedCovidHospital">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#COVID-19DedicatedFacility"/>
+        <rdfs:comment xml:lang="en">The Dedicated COVID Hospitals are hospitals that shall offer comprehensive care primarily for those who have been clinically assigned as severe.</rdfs:comment>
+        <rdfs:label xml:lang="en">DedicatedCovidHospital</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Diagnosis -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Diagnosis">
+        <rdfs:comment xml:lang="en">The representation of a conclusion of a diagostic process.</rdfs:comment>
+        <rdfs:label xml:lang="en">Diagnosis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Disorder -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Disorder">
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:comment xml:lang="en">Material entity that is a clinically abnormal part of an extended organism.</rdfs:comment>
+        <rdfs:label xml:lang="en">Disorder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#DistrictWiseStatistics -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#DistrictWiseStatistics">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#PlaceWiseCasesStatistics"/>
+        <rdfs:label xml:lang="en">DistrictWiseStatistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#EatingDisorder -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#EatingDisorder">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Disorder"/>
+        <rdfs:comment xml:lang="en">clinically eating abnormal.</rdfs:comment>
+        <rdfs:label xml:lang="en">EatingDisorder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#EconomicPolicies -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#EconomicPolicies">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Policy"/>
+        <rdfs:label xml:lang="en">EconomicPolicies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Educational -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Educational">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#BusinessVertical"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/CovidO#Social"/>
+        <rdfs:comment xml:lang="en">organization helps to connect Management, Students, Faculty and Staff, reduce operational costs, improve decision making and decrease response times in the field of education.</rdfs:comment>
+        <rdfs:label xml:lang="en">Educational</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#ExposureViaGathering -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#ExposureViaGathering">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#ExposureToCOVID-19"/>
+        <rdfs:label xml:lang="en">ExposureViaGathering</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Financial -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Financial">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#BusinessVertical"/>
+        <rdfs:label xml:lang="en">Financial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#GoverningBody -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#GoverningBody">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#PublicAuthority"/>
+        <rdfs:comment xml:lang="en">a legislative assembly</rdfs:comment>
+        <rdfs:label xml:lang="en">GoverningBody</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Government -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Government">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#PublicAuthority"/>
+        <rdfs:comment xml:lang="en">A government is the system or group of people governing an organized community</rdfs:comment>
+        <rdfs:label xml:lang="en">Government</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Health -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Health">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#BusinessVertical"/>
+        <rdfs:label xml:lang="en">Health</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#HealthSystemPolicies -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#HealthSystemPolicies">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Policy"/>
+        <rdfs:label xml:lang="en">HealthSystemPolicies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#HomeopathicDrug -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#HomeopathicDrug">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Covid-19HomeopathicTreatment"/>
+        <rdfs:label xml:lang="en">HomeopathicDrug</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#ICUBed -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#ICUBed">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Resources"/>
+        <rdfs:label xml:lang="en">ICUBed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#InfectedCoWorker -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#InfectedCoWorker">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#ExposureToCOVID-19"/>
+        <rdfs:label xml:lang="en">InfectedCoWorker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#InfectedNeighbor -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#InfectedNeighbor">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#ExposureToCOVID-19"/>
+        <rdfs:label xml:lang="en">InfectedNeighbor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#InfectedRoomMate -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#InfectedRoomMate">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#ExposureToCOVID-19"/>
+        <rdfs:label xml:lang="en">InfectedRoomMate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Journal -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Journal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Platform"/>
+        <rdfs:label xml:lang="en">Journal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Mandate -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Mandate">
+        <rdfs:label xml:lang="en">Mandate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Market -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Market">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#ExposureViaGathering"/>
+        <rdfs:label xml:lang="en">Market</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#MedicalClinic -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#MedicalClinic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#MedicalFacility"/>
+        <rdfs:comment xml:lang="en">A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare.</rdfs:comment>
+        <rdfs:label xml:lang="en">MedicalClinic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#MedicalFacility -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#MedicalFacility">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:comment xml:lang="en">Medical Facility</rdfs:comment>
+        <rdfs:label xml:lang="en">MedicalFacility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#MedicalRecordStat -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#MedicalRecordStat">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Statistics"/>
+        <rdfs:label xml:lang="en">MedicalRecordStat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#MentalDisorder -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#MentalDisorder">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Disorder"/>
+        <rdfs:comment xml:lang="en">mental illness</rdfs:comment>
+        <rdfs:label xml:lang="en">MentalDisorder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#MiscellaneousPolicies -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#MiscellaneousPolicies">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Policy"/>
+        <rdfs:label xml:lang="en">MiscellaneousPolicies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#News -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#News">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Covid-19Study"/>
+        <rdfs:label xml:lang="en">News</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#NewsArticles -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#NewsArticles">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Covid-19Study"/>
+        <rdfs:label xml:lang="en">NewsArticles</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Party -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Party">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#ExposureViaGathering"/>
+        <rdfs:label xml:lang="en">Party</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#PersonWiseVaccinationStat -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#PersonWiseVaccinationStat">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#VaccinationStatistics"/>
+        <rdfs:label xml:lang="en">PersonWiseVaccinationStat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#PlaceWiseCasesStatistics -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#PlaceWiseCasesStatistics">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Statistics"/>
+        <rdfs:label xml:lang="en">PlaceWiseCasesStatistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#PlaceWiseVaccinationStat -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#PlaceWiseVaccinationStat">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#VaccinationStatistics"/>
+        <rdfs:label xml:lang="en">PlaceWiseVaccinationStat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Platform -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Platform">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:label xml:lang="en">Platform</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Policy -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Policy">
+        <rdfs:comment xml:lang="en">a set of ideas or plans that is used as a basis for making decisions, especially in politics, economics, or business.</rdfs:comment>
+        <rdfs:label xml:lang="en">Policy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Prevention -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Prevention">
+        <rdfs:label xml:lang="en">Prevention</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#PsychiatricDisorder -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#PsychiatricDisorder">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Disorder"/>
+        <rdfs:comment xml:lang="en">illness that affect mood, thinking and behaviour</rdfs:comment>
+        <rdfs:label xml:lang="en">PsychiatricDisorder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#PublicAuthority -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#PublicAuthority">
+        <rdfs:label xml:lang="en">PublicAuthority</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Research -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Research">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Covid-19Study"/>
+        <rdfs:label xml:lang="en">Research</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Resources -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Resources">
+        <rdfs:label xml:lang="en">Resources</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Restrictions -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Restrictions">
+        <rdfs:label xml:lang="en">Restrictions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#SecondaryContact -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#SecondaryContact">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/codo#ExposureToCOVID-19"/>
+        <rdfs:label xml:lang="en">SecondaryContact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#SleepDisorder -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#SleepDisorder">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Disorder"/>
+        <rdfs:comment xml:lang="en">impair sleep or prevent from getting restful sleep</rdfs:comment>
+        <rdfs:label xml:lang="en">SleepDisorder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Social -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Social">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#BusinessVertical"/>
+        <rdfs:label xml:lang="en">Social</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#SocialPlatforms -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#SocialPlatforms">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Platform"/>
+        <rdfs:label xml:lang="en">SocialMediaSitesAndPlatforms</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#SocialPost -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#SocialPost">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Covid-19Study"/>
+        <rdfs:label xml:lang="en">SocialPost</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#StateAuthority -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#StateAuthority">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#PublicAuthority"/>
+        <rdfs:comment xml:lang="en">A government is the system or group of people governing an state community</rdfs:comment>
+        <rdfs:label xml:lang="en">StateAuthority</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#StateWiseStatistics -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#StateWiseStatistics">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#PlaceWiseCasesStatistics"/>
+        <rdfs:label xml:lang="en">StateWiseStatistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Statistics -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Statistics">
+        <rdfs:comment xml:lang="en">Statistics based on each day.</rdfs:comment>
+        <rdfs:label xml:lang="en">Statistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#TownWiseStatistics -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#TownWiseStatistics">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#PlaceWiseCasesStatistics"/>
+        <rdfs:label xml:lang="en">TownWiseStatistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#UnionTerritory -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#UnionTerritory">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:label xml:lang="en">UnionTerritory</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#User -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#User">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">User</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#VaccinationPolicies -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#VaccinationPolicies">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Policy"/>
+        <rdfs:label xml:lang="en">VaccinationPolicies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#VaccinationStatistics -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#VaccinationStatistics">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Statistics"/>
+        <rdfs:label xml:lang="en">VaccinationStatistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#VillageWiseStatistics -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#VillageWiseStatistics">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#PlaceWiseCasesStatistics"/>
+        <rdfs:label xml:lang="en">VillageWiseStatistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Web -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Web">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Platform"/>
+        <rdfs:label xml:lang="en">Web</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Writer -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Writer">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">Writer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#Yoga -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#Yoga">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/CovidO#Covid-19AyurvedicTreatment"/>
+        <rdfs:label xml:lang="en">Yoga</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/CovidO#covidTestResult -->
+
+    <owl:Class rdf:about="https://w3id.org/CovidO#covidTestResult">
+        <rdfs:label xml:lang="en">Covid Test Result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/DOID_0080600 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/DOID_0080600">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#CoronaVirus"/>
+        <causedBy rdf:resource="https://w3id.org/CovidO#SARS-CoV-2"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#DryCough"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#Fever"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#Tiredness"/>
+        <mayCause rdf:resource="https://w3id.org/CovidO#SevereAcuteRespiratorySyndrome"/>
+        <rdfs:comment xml:lang="en">A Coronavirus infection that is characterized by fever, cough and shortness of breath and that has_material_basis_in SARS-CoV-2.</rdfs:comment>
+        <rdfs:label xml:lang="en">COVID-19</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/page/Asia -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/page/Asia">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Continent"/>
+        <rdfs:comment xml:lang="en">Asia is continent, located primarily in the Eastern and Northern Hemispheres.</rdfs:comment>
+        <rdfs:label xml:lang="en">Asia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/page/China -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/page/China">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Country"/>
+        <isPartOf rdf:resource="https://dbpedia.org/page/Western_Pacific"/>
+        <rdfs:comment xml:lang="en">A Country</rdfs:comment>
+        <rdfs:label xml:lang="en">China</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/page/Haryana -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/page/Haryana">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/State"/>
+        <isPartOf rdf:resource="https://dbpedia.org/page/India"/>
+        <rdfs:comment xml:lang="en">A State</rdfs:comment>
+        <rdfs:label xml:lang="en">Haryana</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/page/India -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/page/India">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Country"/>
+        <isPartOf rdf:resource="https://dbpedia.org/page/Asia"/>
+        <countryCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IND</countryCode>
+        <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20.5937</latitude>
+        <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#string">78.9629</longitude>
+        <rdfs:comment xml:lang="en">A Country</rdfs:comment>
+        <rdfs:label xml:lang="en">India</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/page/Kurukshetra -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/page/Kurukshetra">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/CityDistrict"/>
+        <isPartOf rdf:resource="https://dbpedia.org/page/Haryana"/>
+        <rdfs:label xml:lang="en">Kurukshetra</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/page/Western_Pacific -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/page/Western_Pacific">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Continent"/>
+        <rdfs:comment xml:lang="en">A Continent</rdfs:comment>
+        <rdfs:label xml:lang="en">Western_Pacific</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#AnorexiaNervosa -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#AnorexiaNervosa">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#EatingDisorder"/>
+        <rdfs:comment xml:lang="en">avoid food, severely restrict food, or eat very small quantities of only certain foods.</rdfs:comment>
+        <rdfs:label xml:lang="en">AnorexiaNervosa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Anxiety -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Anxiety">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#MentalDisorder"/>
+        <rdfs:comment xml:lang="en">Mental disorder</rdfs:comment>
+        <rdfs:label xml:lang="en">Anxiety</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Author001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Author001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Author"/>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IvanFranch-Pardo</foaf:name>
+        <rdfs:comment xml:lang="en">Author</rdfs:comment>
+        <rdfs:comment xml:lang="en">IvanFranch-Pardo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Author002 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Author002">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Author"/>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brian M.Napoletano</foaf:name>
+        <rdfs:comment xml:lang="en">Author</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Author003 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Author003">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Author"/>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FernandoRosete-Verges</foaf:name>
+        <rdfs:comment xml:lang="en">Author</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Author004 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Author004">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Author"/>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lawal Billa</foaf:name>
+        <rdfs:comment xml:lang="en">Author</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#BingeEating -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#BingeEating">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#EatingDisorder"/>
+        <rdfs:comment xml:lang="en">out-of-control eating</rdfs:comment>
+        <rdfs:label xml:lang="en">BingeEating</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#BlackFungus -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#BlackFungus">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Covid19FungalInfection"/>
+        <rdfs:comment xml:lang="en">Mucormycosis</rdfs:comment>
+        <rdfs:label xml:lang="en">BlackFungus</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#ChemistryWorld -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#ChemistryWorld">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Web"/>
+        <source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.chemistryworld.com</source>
+        <rdfs:comment xml:lang="en">Web</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#CountryWiseStatInd001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#CountryWiseStatInd001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#CountryWiseStatistics"/>
+        <statisticsOf rdf:resource="https://dbpedia.org/page/India"/>
+        <dailyIncreasedCases rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</dailyIncreasedCases>
+        <dateOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-30T00:00:00</dateOn>
+        <newDeceased rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</newDeceased>
+        <recovered rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</recovered>
+        <totalConfirmedCases rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</totalConfirmedCases>
+        <rdfs:comment xml:lang="en">Country Wise Statistics</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Depression -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Depression">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#MentalDisorder"/>
+        <rdfs:comment xml:lang="en">Mental Disorder</rdfs:comment>
+        <rdfs:label xml:lang="en">Depression</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Diabetes -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Diabetes">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:comment xml:lang="en">A Disease</rdfs:comment>
+        <rdfs:label xml:lang="en">Diabetes</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Diagnosis001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Diagnosis001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Diagnosis"/>
+        <diagnosisOf rdf:resource="https://w3id.org/CovidO#MildAndVeryMildCOVID-19"/>
+        <hasTreatment rdf:resource="https://w3id.org/CovidO#Treatment001"/>
+        <mayCause rdf:resource="https://w3id.org/CovidO#BlackFungus"/>
+        <mayCause rdf:resource="https://w3id.org/CovidO#Depression"/>
+        <diagnosDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-15T09:30:14</diagnosDate>
+        <diagnosedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dr. A.K Gupta</diagnosedBy>
+        <medicalExamination rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BP:102/82, Weight:84Kg, Temprature:101F, Heart Rate:76</medicalExamination>
+        <rdfs:comment xml:lang="en">Diagnosis</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#DryCough -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#DryCough">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SYMP_0000462"/>
+        <rdfs:comment xml:lang="en">SCTID: 11833005</rdfs:comment>
+        <rdfs:label xml:lang="en">Dry Cough</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#EconomicalImpact -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#EconomicalImpact">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Covid-19Impact"/>
+        <rdfs:comment xml:lang="en">EconomicalImpact</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#EducationalImpact -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#EducationalImpact">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Covid-19Impact"/>
+        <rdfs:comment xml:lang="en">EducationalImpact</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#FeelingTired -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#FeelingTired">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SYMP_0000462"/>
+        <rdfs:comment xml:lang="en">SCTID: 224960004</rdfs:comment>
+        <rdfs:label xml:lang="en">Feeling Tired</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Fever -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Fever">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SYMP_0000462"/>
+        <rdfs:comment xml:lang="en">SCTID: 386661006</rdfs:comment>
+        <rdfs:label xml:lang="en">Fever</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#GovernmentOfIndia -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#GovernmentOfIndia">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Government"/>
+        <hasMinistries rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">57</hasMinistries>
+        <rdfs:comment xml:lang="en">Government Of India</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Higgins -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Higgins">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Author"/>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Higgins</foaf:name>
+        <gender>Man</gender>
+        <rdfs:comment xml:lang="en">Author</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Insomnia -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Insomnia">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#SleepDisorder"/>
+        <rdfs:comment xml:lang="en">Insomnia</rdfs:comment>
+        <rdfs:comment xml:lang="en">difficulty falling or staying asleep</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#LMJAmbulanceRescource -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#LMJAmbulanceRescource">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Ambulance"/>
+        <resourcesName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ambulance</resourcesName>
+        <resourcesQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</resourcesQuantity>
+        <rdfs:comment xml:lang="en">Resources</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#LMJBedResources -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#LMJBedResources">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Bed"/>
+        <resourcesName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bed</resourcesName>
+        <resourcesQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</resourcesQuantity>
+        <rdfs:comment xml:lang="en">Resources</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#LMJHospital -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#LMJHospital">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#MedicalFacility"/>
+        <hasA rdf:resource="https://w3id.org/CovidO#LMJAmbulanceRescource"/>
+        <hasA rdf:resource="https://w3id.org/CovidO#LMJBedResources"/>
+        <hasA rdf:resource="https://w3id.org/CovidO#LMJICUResources"/>
+        <hasLocatedIn rdf:resource="https://dbpedia.org/page/Kurukshetra"/>
+        <rdfs:comment xml:lang="en">hospital</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#LMJICUResources -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#LMJICUResources">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#ICUBed"/>
+        <resourcesName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ICU Bed</resourcesName>
+        <resourcesQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</resourcesQuantity>
+        <rdfs:comment xml:lang="en">Resources</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Lockdown -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Lockdown">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Restrictions"/>
+        <rdfs:label xml:lang="en">Lockdown</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Mandate001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Mandate001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Mandate"/>
+        <hasPolicy rdf:resource="https://w3id.org/CovidO#PolicyNo001"/>
+        <hasPrevention rdf:resource="https://w3id.org/CovidO#Prevention001"/>
+        <hasRestriction rdf:resource="https://w3id.org/CovidO#Lockdown"/>
+        <issuedBy rdf:resource="https://w3id.org/CovidO#GovernmentOfIndia"/>
+        <effectiveDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-22T17:00:00</effectiveDate>
+        <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-04-06T06:00:00</endDate>
+        <rdfs:comment xml:lang="en">Mandate</rdfs:comment>
+        <rdfs:comment xml:lang="en">Orders and Advisories</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#MedicalRecord001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#MedicalRecord001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#MedicalRecordStat"/>
+        <admittingIn rdf:resource="https://w3id.org/CovidO#LMJHospital"/>
+        <hasDiagnosis rdf:resource="https://w3id.org/CovidO#Diagnosis001"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#Fever"/>
+        <uses rdf:resource="https://w3id.org/CovidO#LMJBedResources"/>
+        <PatientID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PT-2018001</PatientID>
+        <admittedOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-15T08:30:14</admittedOn>
+        <dischargeDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-20T00:00:00</dischargeDate>
+        <hospitalName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LMJ Hospital</hospitalName>
+        <rdfs:comment xml:lang="en">A person or Patient, Medical record</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#MiddleEastRespiratorySyndrome -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#MiddleEastRespiratorySyndrome">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/2704003"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#Fever"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#NasalCongestion"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#Pains"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#RunnyNose"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#SoreThroat"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#aches"/>
+        <rdfs:comment xml:lang="en">Middle East Respiratory Syndrome (MERS)</rdfs:comment>
+        <rdfs:label xml:lang="en">MiddleEastRespiratorySyndrome(MERS)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#MildAndVeryMildCOVID-19 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#MildAndVeryMildCOVID-19">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#CoronaVirus"/>
+        <mayCause rdf:resource="https://w3id.org/CovidO#MiddleEastRespiratorySyndrome"/>
+        <rdfs:label xml:lang="en">MildAndVeryMildCOVID-19</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#MiscellaneousePolicy01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#MiscellaneousePolicy01">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#MiscellaneousPolicies"/>
+        <effectedIn rdf:resource="https://dbpedia.org/page/China"/>
+        <rdfs:comment xml:lang="en">Miscellaneouse policy</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#ModerateCOVID-19 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#ModerateCOVID-19">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#CoronaVirus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#NasalCongestion -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#NasalCongestion">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SYMP_0000462"/>
+        <rdfs:comment xml:lang="en">SCTID: 68235000</rdfs:comment>
+        <rdfs:label xml:lang="en">Nasal Congestion</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#NewsArticle001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#NewsArticle001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#NewsArticles"/>
+        <hasWriter rdf:resource="https://w3id.org/CovidO#Writer001"/>
+        <publishedBy rdf:resource="https://w3id.org/CovidO#ChemistryWorld"/>
+        <publishedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-08-09T00:00:00</publishedDate>
+        <source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.chemistryworld.com/news/protective-treatment-for-covid-19-makes-minimal-impact/4016064.article</source>
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Protective treatment for Covid-19 makes minimal impact</title>
+        <rdfs:comment xml:lang="en">Article</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#NightCurfew -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#NightCurfew">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Restrictions"/>
+        <rdfs:label xml:lang="en">NightCurfew</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Paho -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Paho">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Journal"/>
+        <source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.paho.org</source>
+        <rdfs:comment xml:lang="en">Journal</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Pains -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Pains">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SYMP_0000462"/>
+        <rdfs:label xml:lang="en">Pains</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Person001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Person001">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <belongsTo rdf:resource="https://dbpedia.org/page/Kurukshetra"/>
+        <hasCovidTest rdf:resource="https://w3id.org/CovidO#PersonCovidTest001"/>
+        <hasDisease rdf:resource="https://w3id.org/CovidO#Diabetes"/>
+        <hasMedicalRecord rdf:resource="https://w3id.org/CovidO#MedicalRecord001"/>
+        <hasVaccineStatistics rdf:resource="https://w3id.org/CovidO#PersonVaccinationStat001"/>
+        <travelFrom rdf:resource="https://dbpedia.org/page/China"/>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shobhit</foaf:name>
+        <DateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1989-08-25T08:19:00</DateOfBirth>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Krishna appartment, Kanpur, UP</address>
+        <contactNo rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7788995566</contactNo>
+        <gender>Man</gender>
+        <uniqueId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">373025642031</uniqueId>
+        <rdfs:comment xml:lang="en">A Person</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Person002 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Person002">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <belongsTo rdf:resource="https://dbpedia.org/page/Kurukshetra"/>
+        <hasCovidTest rdf:resource="https://w3id.org/CovidO#PersonCovidTest002"/>
+        <hasDisease rdf:resource="https://w3id.org/CovidO#Pneumonia"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#FeelingTired"/>
+        <travelFrom rdf:resource="https://dbpedia.org/page/China"/>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ankit Kumar</foaf:name>
+        <DateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1990-05-18T02:30:00</DateOfBirth>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sector 08, Kurukshetra, Haryana</address>
+        <contactNo rdf:datatype="http://www.w3.org/2001/XMLSchema#long">8879562305</contactNo>
+        <uniqueId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9023185012</uniqueId>
+        <rdfs:comment xml:lang="en">A Person</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#PersonCovidTest001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#PersonCovidTest001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#covidTestResult"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#DryCough"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#FeelingTired"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#Fever"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#NasalCongestion"/>
+        <testOnDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-01T00:00:00</testOnDate>
+        <testResult>Positive</testResult>
+        <rdfs:comment xml:lang="en">Person Covid Test</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#PersonCovidTest002 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#PersonCovidTest002">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#covidTestResult"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#Fever"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#NasalCongestion"/>
+        <hasSymptom rdf:resource="https://w3id.org/CovidO#Tiredness"/>
+        <testOnDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-04T00:00:00</testOnDate>
+        <testResult>Positive</testResult>
+        <rdfs:comment xml:lang="en">Person Covid Test</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#PersonVaccinationStat001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#PersonVaccinationStat001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#PersonWiseVaccinationStat"/>
+        <ReferenceID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20312277489181</ReferenceID>
+        <dateOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-25T00:00:00</dateOn>
+        <dueDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-17T00:00:00</dueDate>
+        <vaccinationAt rdf:datatype="http://www.w3.org/2001/XMLSchema#string">District Covid Vaccination 04, Bhopal</vaccinationAt>
+        <vaccineBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Covid Vaccination Bhopal Four</vaccineBy>
+        <vaccineName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Covishild</vaccineName>
+        <rdfs:comment xml:lang="en">A Vaccination Statistics</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#PhysicalImpact -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#PhysicalImpact">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Covid-19Impact"/>
+        <rdfs:comment xml:lang="en">PhysicalImpact</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#PlaceWiseVaccinationStatInd001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#PlaceWiseVaccinationStatInd001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#PlaceWiseVaccinationStat"/>
+        <statisticsOf rdf:resource="https://dbpedia.org/page/India"/>
+        <dailyVaccinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">191181</dailyVaccinations>
+        <dateOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-16T00:00:00</dateOn>
+        <noOfPeopleFullyVaccinated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</noOfPeopleFullyVaccinated>
+        <noOfPeopleVaccinated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">191181</noOfPeopleVaccinated>
+        <totalVaccinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">191181</totalVaccinations>
+        <rdfs:comment xml:lang="en">Place Wise Vaccination Statistics</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#PlaceWiseVaccinationStatInd002 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#PlaceWiseVaccinationStatInd002">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#PlaceWiseVaccinationStat"/>
+        <statisticsOf rdf:resource="https://dbpedia.org/page/India"/>
+        <dailyVaccinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">112150</dailyVaccinations>
+        <dateOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-17T00:00:00</dateOn>
+        <noOfPeopleFullyVaccinated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</noOfPeopleFullyVaccinated>
+        <noOfPeopleVaccinated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">224301</noOfPeopleVaccinated>
+        <totalVaccinations rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">224301</totalVaccinations>
+        <rdfs:comment xml:lang="en">PlaceWiseVaccinationStatistics</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Pneumonia -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Pneumonia">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/64572001"/>
+        <rdfs:comment xml:lang="en">A Disease</rdfs:comment>
+        <rdfs:label xml:lang="en">Pneumonia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#PolicyNo001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#PolicyNo001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#ClosurePolicies"/>
+        <effectedIn rdf:resource="https://dbpedia.org/page/India"/>
+        <hasImpact rdf:resource="https://w3id.org/CovidO#EconomicalImpact"/>
+        <hasImpact rdf:resource="https://w3id.org/CovidO#EducationalImpact"/>
+        <hasImpact rdf:resource="https://w3id.org/CovidO#PhysicalImpact"/>
+        <effectiveDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-01T00:00:00</effectiveDate>
+        <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-04-20T00:00:00</endDate>
+        <internalMovementRestrictions rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NO</internalMovementRestrictions>
+        <internationalTravel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allow with &quot;Negative&quot; test result</internationalTravel>
+        <publicEvents rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allow with vaccinated certificate</publicEvents>
+        <publicTransport rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allow with vaccinated certificate</publicTransport>
+        <schools rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Closed for everyone</schools>
+        <stayAtHome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NO</stayAtHome>
+        <workplace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opened with &quot;Negative&quot; test result</workplace>
+        <rdfs:comment xml:lang="en">a closure policy</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Prevention001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Prevention001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Prevention"/>
+        <preventionFor rdf:resource="http://purl.obolibrary.org/obo/DOID_0080600"/>
+        <measures rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hand Wash, Use Senitizer, Avoid travelling, Wearing mask, get vaccined</measures>
+        <preventionDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-20T00:00:00</preventionDate>
+        <rdfs:comment xml:lang="en">Prevention</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Quarantine -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Quarantine">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Restrictions"/>
+        <rdfs:label xml:lang="en">Quarantine</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#ResearchStudy001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#ResearchStudy001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Research"/>
+        <hasAuthor rdf:resource="https://w3id.org/CovidO#Author001"/>
+        <hasAuthor rdf:resource="https://w3id.org/CovidO#Author002"/>
+        <hasAuthor rdf:resource="https://w3id.org/CovidO#Author003"/>
+        <hasAuthor rdf:resource="https://w3id.org/CovidO#Author004"/>
+        <publishedBy rdf:resource="https://w3id.org/CovidO#STE"/>
+        <doi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://doi.org/10.1016/j.scitotenv.2020.140033</doi>
+        <publishedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-15T00:00:00</publishedDate>
+        <source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.sciencedirect.com</source>
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spatial analysis and GIS in the study of COVID-19. A review</title>
+        <rdfs:comment xml:lang="en">ResearchStudy</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#ResearchStudy002 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#ResearchStudy002">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Research"/>
+        <hasAuthor rdf:resource="https://w3id.org/CovidO#Higgins"/>
+        <publishedBy rdf:resource="https://w3id.org/CovidO#Paho"/>
+        <doi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://doi.org/10.26633/RPSP.2022.117</doi>
+        <publishedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-09-17T00:00:00</publishedDate>
+        <title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deep state phobia: Narrative convergence in coronavirus conspiracism on Instagram</title>
+        <rdfs:comment xml:lang="en">Research Study</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#RunnyNose -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#RunnyNose">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SYMP_0000462"/>
+        <rdfs:label xml:lang="en">RunnyNose</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#SARS-CoV-2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#SARS-CoV-2">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#CoronaVirus"/>
+        <rdfs:label xml:lang="en">SARS-CoV-2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#STE -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#STE">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Journal"/>
+        <rdfs:comment xml:lang="en">Science of The Total Environment</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Schizophrenia -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Schizophrenia">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#PsychiatricDisorder"/>
+        <rdfs:comment xml:lang="en">a serious brain illness</rdfs:comment>
+        <rdfs:label xml:lang="en">Schizophrenia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#SevereAcuteRespiratorySyndrome -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#SevereAcuteRespiratorySyndrome">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/2704003"/>
+        <rdfs:comment xml:lang="en">Severe Acute Respiratory Syndrome (SARS)</rdfs:comment>
+        <rdfs:label xml:lang="en">SevereAcuteRespiratorySyndrome(SARS)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#SleepApnea -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#SleepApnea">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#SleepDisorder"/>
+        <rdfs:comment xml:lang="en">a person&apos;s breathing is interrupted during sleep.</rdfs:comment>
+        <rdfs:label xml:lang="en">SleepApnea</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#SoreThroat -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#SoreThroat">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SYMP_0000462"/>
+        <rdfs:label xml:lang="en">SoreThroat</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Tiredness -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Tiredness">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SYMP_0000462"/>
+        <rdfs:label xml:lang="en">Tiredness</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Treatment001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Treatment001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Covid-19AllopathicTreatment"/>
+        <rdfs:comment xml:lang="en">Treatment</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#Writer001 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#Writer001">
+        <rdf:type rdf:resource="https://w3id.org/CovidO#Writer"/>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dalmeet Singh Chawla</foaf:name>
+        <rdfs:comment xml:lang="en">Writer</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/CovidO#aches -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/CovidO#aches">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SYMP_0000462"/>
+        <rdfs:label xml:lang="en">Aches</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

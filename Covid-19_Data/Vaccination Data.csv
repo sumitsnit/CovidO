@@ -1,0 +1,10 @@
+location,iso_code,date,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,daily_vaccinations_raw,daily_vaccinations,total_vaccinations_per_hundred,people_vaccinated_per_hundred,people_fully_vaccinated_per_hundred,total_boosters_per_hundred,daily_vaccinations_per_million,daily_people_vaccinated,daily_people_vaccinated_per_hundred
+#country+name,#country+code,#date,#total+vaccinations,,,,,#total+vaccinations+daily,,,,,,,
+India,IND,15-01-2021,0,0,,,,,0,0,,,,,
+India,IND,16-01-2021,191181,191181,,,191181,191181,0.01,0.01,,,136,191181,0.014
+India,IND,17-01-2021,224301,224301,,,33120,112150,0.02,0.02,,,80,112150,0.008
+India,IND,18-01-2021,454049,454049,,,229748,151350,0.03,0.03,,,108,151350,0.011
+India,IND,19-01-2021,674835,674835,,,220786,168709,0.05,0.05,,,120,168709,0.012
+India,IND,20-01-2021,806484,806484,,,131649,161297,0.06,0.06,,,115,161297,0.011
+India,IND,21-01-2021,1043534,1043534,,,237050,173922,0.07,0.07,,,124,173922,0.012
+India,IND,22-01-2021,1390592,1390592,,,347058,198656,0.1,0.1,,,141,198656,0.014
